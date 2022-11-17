@@ -14,6 +14,6 @@ RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 
 # Install NodeJS
 RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.2/install.sh | bash
-RUN nvm use lts/hydrogen
+RUN bash -c 'source ~/.bashrc && nvm install lts/hydrogen && nvm use lts/hydrogen'
 # Install nodejs packages
-RUN npm i -g pnpm xo snowpack
+RUN bash -c 'source ~/.bashrc && npm i -g pnpm xo snowpack'
