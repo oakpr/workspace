@@ -1,5 +1,8 @@
 FROM docker.io/rockylinux:9
 
+# Install code-server
+RUN curl -fsSL https://code-server.dev/install.sh | sh
+
 # Install native packages
 RUN dnf -y update && \
 	dnf -y install git clang clang-devel clang-tools-extra libxkbcommon-devel pkg-config openssl-devel libxcb-devel pulseaudio-libs-devel && \
